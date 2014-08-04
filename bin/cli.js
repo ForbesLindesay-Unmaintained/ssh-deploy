@@ -17,7 +17,7 @@ var argv = require('minimist')(process.argv.slice(2), {
 var deploy = require('../');
 
 var descriptions = {
-  host: 'The host is the domain name that an application is made accessible at',
+  host: 'The host is the domain name that an application is made accessible at (defaults to host read from package.json)',
   name: 'The name of the environment variable',
   value: 'The value of the environment variable',
   directory: 'The directory of the application, defaults to the current working directory',

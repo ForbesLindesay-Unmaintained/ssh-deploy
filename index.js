@@ -22,6 +22,12 @@ function addCommand(name) {
     return pkg.then(function (pkg) {
       options.app = options.app || pkg.name;
       options.version = options.version || pkg.version;
+      options.host = options.host || pkg.host;
+      fn.options.forEach(function (option) {
+        if (!options[option] || typeof options[option] !== 'string') {
+          throw new Error('You mut provide a value for ' + option);
+        }
+      });
       return fn(connection, options);
     }).then(function () {
       return connection.close();
