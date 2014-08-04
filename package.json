@@ -1,24 +1,27 @@
 {
   "name": "ssh-deploy",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Deploy node.js apps over ssh",
+  "bin": {
+    "ssh-deploy": "./bin/cli.js"
+  },
   "keywords": [],
   "dependencies": {
+    "concat-stream": "^1.4.6",
     "fstream-npm": "^1.0.0",
+    "minimist": "^0.2.0",
     "promise": "^5.0.0",
     "ssh2": "^0.3.4",
     "sshconf-stream": "^0.1.2",
     "tar-pack": "^2.0.0"
   },
-  "devDependencies": {
-    "mocha": "*"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "mocha -R spec"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ForbesLindesay/sploy.git"
+    "url": "https://github.com/ForbesLindesay/ssh-deploy.git"
   },
   "author": "ForbesLindesay",
   "license": "MIT"
