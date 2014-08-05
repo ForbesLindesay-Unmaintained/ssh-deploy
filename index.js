@@ -16,7 +16,7 @@ if (agent.version !== version) {
 function addCommand(name) {
   var fn = require('./lib/commands/' + name);
   exports[name] = function (remote, options) {
-    var connection = ssh(remote);
+    var connection = ssh(remote, options && options.debug);
     options = options || {};
     var pkg = options.directory ? read(options.directory + '/package.json', 'utf8').then(JSON.parse) : Promise.resolve({});
     return pkg.then(function (pkg) {
