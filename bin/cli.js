@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+var tabtab = require('tabtab');
 var argv = require('minimist')(process.argv.slice(2), {
   string: ['host', 'name', 'value', 'directory', 'app', 'version'],
   default: {
@@ -15,6 +16,7 @@ var argv = require('minimist')(process.argv.slice(2), {
   }
 });
 var deploy = require('../');
+var connection = require('../lib/connection');
 
 var descriptions = {
   host: 'The host is the domain name that an application is made accessible at (defaults to host read from package.json)',
@@ -25,8 +27,19 @@ var descriptions = {
   version: 'The version of teh application (default to version, read from package.json)'
 };
 
+if(argv._[0] === 'completion') {
+  return tabtab.complete('ssh-deploy', function(err, data) {
+    if(err || !data) return;
 
-if (argv.help || argv._[0] === 'help' || argv._.length < 2) {
+    if (data.words < 2) {
+      tabtab.log(Object.keys(deploy).concat(['help']).sort(), data);
+    } else if (data.words < 3) {
+      connection.getAutoCompleteList().done(function (list) {
+        tabtab.log(list.sort(), data);
+      });
+    }
+  });
+} else if (argv.help || argv._[0] === 'help' || argv._.length === 0) {
   var commandLength = Object.keys(deploy).map(function (c) { return c.length; }).reduce(function (a, b) {
     return Math.max(a, b);
   }, 0);
@@ -61,6 +74,9 @@ if (argv.help || argv._[0] === 'help' || argv._.length < 2) {
     }
   });
   console.log();
+} else if (argv._.length < 2) {
+  console.log('You must provide a command and host, try "ssh-deploy help" if you are stuck.');
+  process.exit(1);
 } else {
   deploy[argv._[0]](argv._[1], argv).done();
 }

@@ -13,6 +13,7 @@
     "promise": "^5.0.0",
     "ssh2": "^0.3.4",
     "sshconf-stream": "^0.1.2",
+    "tabtab": "0.0.2",
     "tar-pack": "^2.0.0"
   },
   "devDependencies": {},

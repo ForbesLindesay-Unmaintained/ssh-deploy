@@ -58,5 +58,16 @@ deploy.publish('root:password@127.0.0.1', {directory: process.cwd}).then(functio
 });
 ```
 
+## Auto Complete and Naming Hosts
 
 To configure a .ssh/config file see http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/
+
+To enable tab auto-complete run one of the following commands (depending on your system:
+
+```
+ssh-deploy completion >> ~/.bash_profile
+ssh-deploy completion >> ~/.bashrc
+ssh-deploy completion >> ~/.zshrc
+```
+
+This is exactly like adding completion to npm.  Note that it will only auto-complete the command name and the server name (if you have a .ssh/config file).
