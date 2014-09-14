@@ -1,6 +1,6 @@
 {
   "name": "ssh-deploy-agent",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Agent for servers with apps deployed over ssh",
   "dependencies": {
     "getport": "^0.1.0",
