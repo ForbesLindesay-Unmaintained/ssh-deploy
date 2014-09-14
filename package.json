@@ -11,6 +11,7 @@
     "fstream-npm": "^1.0.0",
     "minimist": "^0.2.0",
     "promise": "^5.0.0",
+    "semver": "^3.0.1",
     "ssh2": "^0.3.4",
     "sshconf-stream": "^0.1.2",
     "tabtab": "0.0.2",
