@@ -2,6 +2,8 @@
 
 ## Usage
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/ssh-deploy.svg)](https://greenkeeper.io/)
+
 ```
 ssh-deploy env-get       <remote> [options] Get the value of an environment variable for a given host.
 
