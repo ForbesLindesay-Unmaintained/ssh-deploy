@@ -9,13 +9,13 @@
   "dependencies": {
     "concat-stream": "^1.4.6",
     "fstream-npm": "^1.0.0",
-    "minimist": "^0.2.0",
-    "promise": "^5.0.0",
-    "semver": "^3.0.1",
-    "ssh2": "^0.3.4",
+    "minimist": "^1.2.0",
+    "promise": "^7.1.1",
+    "semver": "^5.3.0",
+    "ssh2": "^0.5.4",
     "sshconf-stream": "^0.1.2",
-    "tabtab": "0.0.2",
-    "tar-pack": "^2.0.0"
+    "tabtab": "2.2.2",
+    "tar-pack": "^3.4.0"
   },
   "devDependencies": {},
   "scripts": {
